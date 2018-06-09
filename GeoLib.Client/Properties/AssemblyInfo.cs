@@ -8,11 +8,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Geolib.WindowsHost")]
+[assembly: AssemblyTitle("GeoLib.Client")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Geolib.WindowsHost")]
+[assembly: AssemblyProduct("GeoLib.Client")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -54,4 +54,4 @@ using System.Windows;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: ContractNamespace(contractNamespace: "http://somenamespace", ClrNamespace = "Geolib.WindowsHost.Contracts")]
+[assembly :ContractNamespace(contractNamespace: "http://somenamespace",ClrNamespace = "Geolib.Client.Contracts")]
