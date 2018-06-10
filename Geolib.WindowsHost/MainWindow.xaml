@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Start" HorizontalAlignment="Left" Margin="108,208,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Stop" HorizontalAlignment="Left" Margin="217,208,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="108,265,0,0" VerticalAlignment="Top" Name="lblMsg"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="194,54,0,0" VerticalAlignment="Top" Width="255" Click="Button_Click"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Margin="194,126,0,0" VerticalAlignment="Top" Width="255" Click="Button_Click_1"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="194,294,0,0" VerticalAlignment="Top" Name="lblMsg" RenderTransformOrigin="2.036,0.304"/>
+        <Button Content="In Proc" HorizontalAlignment="Left" Margin="194,197,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <TextBox Name="txtMsg" HorizontalAlignment="Left" Height="23" Margin="194,243,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="255"/>
 
     </Grid>
 </Window>

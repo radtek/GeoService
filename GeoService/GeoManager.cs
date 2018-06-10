@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GeoService
@@ -44,6 +45,7 @@ namespace GeoService
 
         public ZipCodeData GetZipcodeInfo(string zip)
         {
+            Thread.Sleep(10);
             ZipCodeData data = null;
             IZipCodeRepository repo = _zipCodeRepository?? new ZipCodeRepository();
             var zipCodeEntity = repo.GetByZip(zip);

@@ -27,12 +27,13 @@ namespace GeoLib.Client
         {
             InitializeComponent();
         }
+        GeoClient client = null;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if(!string.IsNullOrWhiteSpace( zipCode.Text ))
             {
-                GeoClient client = new GeoClient("httpEP");
+                 client = new GeoClient("tcpEP");
                 var result = client.GetZipcodeInfo(zipCode.Text);
                 if(result != null)
                 {
@@ -40,7 +41,7 @@ namespace GeoLib.Client
                     lblState.Content = result.State;
                 }
 
-                client.Close();
+                //client.Close();
             }
         }
 
