@@ -27,6 +27,15 @@
       </Component>
       <Component Id="cmp3FDB11E2080B48E1869C5B0060F2A7F1"  Guid="5BA6C726-CBF2-4462-8E6C-D0E7215AA0A7">
         <File Id="filF994B44A6AAFDF6694D812C139451228" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.ConsoleHost.exe" />
+        <ServiceInstall Id="ServiceInstaller" Type="ownProcess" Vital="yes"
+          Name="GeoService" DisplayName="Geo Service"
+          Description="Example Geo Service" Start="auto"
+          Account="LocalSystem" ErrorControl="normal"
+          Arguments=" /start GeoService"
+          Interactive="no" />
+
+        <ServiceControl Id="StartService"  Stop="both" Start="install" Remove="uninstall"
+            Name="GeoService" Wait="yes" />
       </Component>
       <Component Id="cmpB0054C37A374587AEDA3544AE2DE3CDC"  Guid="A75F499A-D021-4643-B059-02F9BE137F07">
         <File Id="fil1C8A9ADE8860FCD3798F0C92A463B17F" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.ConsoleHost.exe.config" />
@@ -58,6 +67,7 @@
       <Component Id="cmp930DBE897BFB80C36848372588DF33FA"  Guid="DAAD0ED8-EFFD-4CD3-A91C-85D6C5190E9F">
         <File Id="filC3417649633897637F8C467883476308" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Data.pdb" />
       </Component>
+    
     </ComponentGroup>
   </Fragment>
 </Wix>

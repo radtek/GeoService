@@ -2,14 +2,18 @@
 using GeoLib.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Geo.Service
 {
+   [ServiceBehavior(IncludeExceptionDetailInFaults =true)]
     public class StatefulGeoManager : IStatefulGeoService
     {
+        private string logfile = @"C:\geoService.txt";
         private ZipCode _zipCodeEntity;
         private ZipCodeRepository _zipCodeRepository;
 
@@ -42,8 +46,18 @@ namespace Geo.Service
 
         public void PushZip(string zip)
         {
-            IZipCodeRepository repo = new ZipCodeRepository();
-            _zipCodeEntity= repo.GetByZip(zip);
+            try
+            {
+                IZipCodeRepository repo = new ZipCodeRepository();
+                _zipCodeEntity = repo.GetByZip(zip);
+            }
+            catch (Exception ex)
+            {
+                File.WriteAllText(logfile, ex.Message);
+
+                throw ex;
+            }
+           
 
         }
     }
