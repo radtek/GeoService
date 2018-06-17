@@ -21,6 +21,7 @@
   <ItemGroup>
     <Compile Include="GeoServices.wxs" />
     <Compile Include="Product.wxs" />
+    <Compile Include="UserDetails.wxs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TextFile1.txt" />

@@ -33,7 +33,7 @@
         <ServiceInstall Id="ServiceInstaller" Type="ownProcess" Vital="yes"
           Name="GeoService" DisplayName="Geo Service"
           Description="Example Geo Service" Start="auto"
-          Account="LocalSystem" ErrorControl="normal"
+          Account="[INSTALLED_USERNAME]" ErrorControl="normal" Password="[PASSWORD]"
           Arguments=" /start GeoService"
           Interactive="no" />
 

@@ -11,7 +11,17 @@
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate  EmbedCab="yes"/>
+    <UI Id="MyWixUI_Mondo">
+      <UIRef Id="WixUI_Mondo" />
+      <UIRef Id="WixUI_ErrorProgressText" />
 
+      <DialogRef Id="AccountDlg" />
+
+      <Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="AccountDlg" Order="3">LicenseAccepted = "1"</Publish>
+      <Publish Dialog="SetupTypeDlg" Control="Back" Event="NewDialog" Value="AccountDlg">1</Publish>
+    </UI>
+    <SetProperty Id="INSTALLED_USERNAME" Value="[%USERDOMAIN]\[%USERNAME]" Before="CostFinalize" Sequence="ui" />
+    <Property Id="PASSWORD" Value="A123456!"/>
 		<Feature Id="ProductFeature" Title="GeoServiceInstaller" Level="1">
 			<!--<ComponentGroupRef Id="ProductComponents" />-->
       <ComponentGroupRef Id="GeoServiceComponentGroup"/>
