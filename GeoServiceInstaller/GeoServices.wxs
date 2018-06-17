@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
   <!--<Fragment>
     <DirectoryRef Id="INSTALLLOCATION">
       <Directory Id="dir31ACF025D6384FA9F46BFB3FA59CE292" Name="debug" />
     </DirectoryRef>
   </Fragment>-->
-  <Fragment>
+  <Fragment> 
+
+    <Property Id="ENVIRONMENT" Value="QA"/>
     <ComponentGroup Id="GeoServiceComponentGroup" Directory="INSTALLFOLDER" >
       <Component Id="cmp8E257A3F1686FE78B5939294C5253D0D"  Guid="96AEC7E3-58E2-44DC-A7D2-6DC63AB48223">
         <File Id="fil3109704CED858305CC307CE92549B6A9" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\EntityFramework.dll" />
@@ -39,6 +42,13 @@
       </Component>
       <Component Id="cmpB0054C37A374587AEDA3544AE2DE3CDC"  Guid="A75F499A-D021-4643-B059-02F9BE137F07">
         <File Id="fil1C8A9ADE8860FCD3798F0C92A463B17F" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.ConsoleHost.exe.config" />
+        <util:XmlFile Id="UpdateBaseAddress"
+              Action="setValue"
+              File="[INSTALLFOLDER]\GeoLib.ConsoleHost.exe.config"
+              SelectionLanguage="XPath"
+              Permanent="yes"
+              ElementPath="/configuration/appSettings/add[\[]@key='ENVIRONMENT'[\]]"
+              Name="value" Value="[ENVIRONMENT]" />
       </Component>
       <Component Id="cmp86F94FE241CCF92E406EFA215BE8CF96"  Guid="0983A33C-5EF9-409C-94B2-DF7FEE282D94">
         <File Id="fil4FC8C91BACF49C03B30F0DAB1FBCE561" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.ConsoleHost.pdb" />

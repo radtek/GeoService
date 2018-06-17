@@ -2,7 +2,8 @@
 <!--<?define PRODUCT="GeoService"?>
 <?define MAINEXE=$(var.GeoLib.ConsoleHost.TargetFileName)?>
 <?define VERSION=!(bind.FileVersion.$(var.MAINEXE))?>--> 
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 	<Product Id="*" Name="GeoServiceInstaller" Language="1033" 
            Version="1.0.0.0" 
            Manufacturer="Geo Services" UpgradeCode="17585e43-eb7a-4514-a5c8-d6923d2d65b1">
@@ -26,6 +27,7 @@
 			</Directory>
 		</Directory>
 	</Fragment>
+  
 
 	<!--<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
