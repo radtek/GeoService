@@ -28,6 +28,7 @@
         </ListBox>
         <Button Content="Button" HorizontalAlignment="Left" Margin="164,357,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
         <TextBox Name="txtMsg" HorizontalAlignment="Left" Height="23" Margin="164,318,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="PushZip" HorizontalAlignment="Left" Margin="287,50,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
 
     </Grid>
 </Window>

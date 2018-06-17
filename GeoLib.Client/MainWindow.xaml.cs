@@ -26,8 +26,10 @@ namespace GeoLib.Client
         public MainWindow()
         {
             InitializeComponent();
+            sClient = new StatefulGeoClient();
         }
         GeoClient client = null;
+        StatefulGeoClient sClient = null;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -70,6 +72,22 @@ namespace GeoLib.Client
 
             client.ShowMessage(txtMsg.Text);
             factory.Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(zipCode.Text))
+            {
+               
+                sClient.PushZip(zipCode.Text);
+                //if (result != null)
+                //{
+                //    lblCity.Content = result.City;
+                //    lblState.Content = result.State;
+                //}
+
+                //client.Close();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using GeoService;
+﻿using Geo.Service;
+using GeoService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace GeoLib.ConsoleHost
         {
             ServiceHost hostGeoManager = new ServiceHost(typeof(GeoManager));
             hostGeoManager.Open();
+
+            ServiceHost statefulHost = new ServiceHost(typeof(StatefulGeoManager));
+            statefulHost.Open();
             Console.WriteLine("Service started. Press anykey to close the service");
             Console.ReadLine();
             hostGeoManager.Close();

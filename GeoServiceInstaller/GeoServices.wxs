@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--<Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Directory Id="dir31ACF025D6384FA9F46BFB3FA59CE292" Name="debug" />
+    </DirectoryRef>
+  </Fragment>-->
+  <Fragment>
+    <ComponentGroup Id="GeoServiceComponentGroup" Directory="INSTALLFOLDER" >
+      <Component Id="cmp8E257A3F1686FE78B5939294C5253D0D"  Guid="96AEC7E3-58E2-44DC-A7D2-6DC63AB48223">
+        <File Id="fil3109704CED858305CC307CE92549B6A9" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\EntityFramework.dll" />
+      </Component>
+      <Component Id="cmp736A84B5DF9CC2F64BBF6A99D3BEC60F"  Guid="A4CBFC3E-B7B9-4D5B-95D0-E30065924671">
+        <File Id="fil348556DAFE259C9920977993FDCF9683" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\EntityFramework.SqlServer.dll" />
+      </Component>
+      <Component Id="cmp00BF67AC2CD61E3FC28F8BC7EA538600"  Guid="A5C9FE79-B3C2-40DE-BA96-158773C31EEF">
+        <File Id="filAD122D0556332B4F0CBFA7DEE3916FB7" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\EntityFramework.SqlServer.xml" />
+      </Component>
+      <Component Id="cmp005A3A9DD12A5CCB4009C158CA3ACF7B"  Guid="A71E6F99-75D4-446C-8384-994615A0090C">
+        <File Id="filF14E9A35D3218C22E722A6A93ACB1986" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\EntityFramework.xml" />
+      </Component>
+      <Component Id="cmp0CA128A2167CE9763BFAF11A689C16F2"  Guid="20339109-5880-462C-9A83-9CE78A1D8751">
+        <File Id="fil86514F5FAA5C7ABFE0A1C72961583771" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\Geo.Service.dll" />
+      </Component>
+      <Component Id="cmp23790320C31F91FCADA42429BAAF5DDF"  Guid="743FDFEC-9520-4668-8385-73BF9DFC89EC">
+        <File Id="filBBD4ABAF451850A3DC0EF7C93C545013" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\Geo.Service.pdb" />
+      </Component>
+      <Component Id="cmp3FDB11E2080B48E1869C5B0060F2A7F1"  Guid="5BA6C726-CBF2-4462-8E6C-D0E7215AA0A7">
+        <File Id="filF994B44A6AAFDF6694D812C139451228" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.ConsoleHost.exe" />
+      </Component>
+      <Component Id="cmpB0054C37A374587AEDA3544AE2DE3CDC"  Guid="A75F499A-D021-4643-B059-02F9BE137F07">
+        <File Id="fil1C8A9ADE8860FCD3798F0C92A463B17F" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.ConsoleHost.exe.config" />
+      </Component>
+      <Component Id="cmp86F94FE241CCF92E406EFA215BE8CF96"  Guid="0983A33C-5EF9-409C-94B2-DF7FEE282D94">
+        <File Id="fil4FC8C91BACF49C03B30F0DAB1FBCE561" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.ConsoleHost.pdb" />
+      </Component>
+      <Component Id="cmpB9BC8982B620AB637926A6E5FA6B1AD5"  Guid="AB489DCD-0F27-4439-99EF-379BF0B60C96">
+        <File Id="filFBF1A4E1AEB9FF40AEC9D2F20175152E" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Contracts.dll" />
+      </Component>
+      <Component Id="cmp1B57F0CEAAE3ED0DEFF0A7A3B0C126D6"  Guid="7033CDB9-BB4E-468D-BA3D-2C761F23DED9">
+        <File Id="filF7E2BB8B94A6C95C85F7F0DD34C0067A" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Contracts.pdb" />
+      </Component>
+      <Component Id="cmp535C06C512CD2FBCC104883C95C09DEC"  Guid="FCD0956E-8CB2-47F7-9FAC-CFBD9610804A">
+        <File Id="filC7609DE432C4D07F7C9492B1AEC7D4E4" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Core.dll" />
+      </Component>
+      <Component Id="cmp9C7E0856E077D430B5C7E5851B7DAF76"  Guid="AFE15FF2-A262-495D-9A5F-6C3CF8773BEF">
+        <File Id="fil4FD77B39E9FB305E8B75AF9BF9AC35A5" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Core.dll.config" />
+      </Component>
+      <Component Id="cmp1668CC00C1D10C3C66454AD78D2C62D3"  Guid="667A3D3E-3436-4B0C-941D-7D2D6D687BBE">
+        <File Id="fil12C46ABE3500F827919179D63072147C" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Core.pdb" />
+      </Component>
+      <Component Id="cmpA642CCF3E7FD02418E494A0C110CF22C"  Guid="376A58A0-2696-4406-8CCA-E89B7C4BDCAA">
+        <File Id="fil3568674AFF33E98B1006D302702707FB" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Data.dll" />
+      </Component>
+      <Component Id="cmp06BC3DF0C21058C74E686141F762E9D9"  Guid="B16177C3-EB02-4825-B98A-3EAAD4CA7D2E">
+        <File Id="fil678DE0159A5ADBE2DCE02F6B1ACD06C0" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Data.dll.config" />
+      </Component>
+      <Component Id="cmp930DBE897BFB80C36848372588DF33FA"  Guid="DAAD0ED8-EFFD-4CD3-A91C-85D6C5190E9F">
+        <File Id="filC3417649633897637F8C467883476308" KeyPath="yes" Source="$(var.GeoLib.ConsoleHost.TargetDir)\GeoLib.Data.pdb" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
